@@ -1,6 +1,7 @@
 package com.duannd.mongodb;
 
 import com.google.gson.JsonObject;
+import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
@@ -38,6 +39,22 @@ class MongoClientFactoryTest {
         LOGGER.info("Check existed collection time: {}, isExisted: {}", (end - start), isExisted);
 
         Assertions.assertTrue(isExisted);
+    }
+
+    @Test
+    public void mongoFindDoc() {
+        LOGGER.info("Mongo Find Document Example....");
+        MongoClientFactory.getInstance().log();
+
+        System.out.println("Get & create collection running.......");
+        String collectionName = "z_audit_log_5";
+        System.out.println(collectionName);
+        MongoCollection<Document> mongoCollection = MongoClientFactory.getInstance().getCollection(collectionName);
+        Assertions.assertNotNull(mongoCollection);
+
+        BasicDBObject basicDBObject = new BasicDBObject();
+        basicDBObject.append("name", "test");
+        mongoCollection.find(basicDBObject);
     }
 
 }
