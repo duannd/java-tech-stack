@@ -159,3 +159,6 @@ Desktop.ini
 /.nyc_output/
 
 target/
+
+/logs/
+logs/
