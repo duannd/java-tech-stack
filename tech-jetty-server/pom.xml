@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>java-tech-stack</artifactId>
+        <groupId>com.duannd</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>tech-jetty-server</artifactId>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <jetty.server.version>11.0.8</jetty.server.version>
+        <jakarta.servlet.version>5.0.0</jakarta.servlet.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.duannd</groupId>
+            <artifactId>tech-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Jetty 11 & servlet 5 - https://www.eclipse.org/jetty/ -->
+        <dependency> <!-- The core jetty server artifact.-->
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>${jetty.server.version}</version>
+        </dependency>
+        <dependency> <!-- Jetty Servlet Container -->
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
+            <version>${jetty.server.version}</version>
+        </dependency>
+        <dependency>  <!-- Utility Servlets from Jetty -->
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlets</artifactId>
+            <version>${jetty.server.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>${jakarta.servlet.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

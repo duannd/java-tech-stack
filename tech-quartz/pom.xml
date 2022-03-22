@@ -15,6 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <quartz.version>2.3.2</quartz.version>
     </properties>
 
     <dependencies>
@@ -26,6 +27,7 @@
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz</artifactId>
+            <version>${quartz.version}</version>
         </dependency>
     </dependencies>
 
